@@ -17,6 +17,7 @@ function ClassementPage() {
             });
     
             const data = await response.json();
+            console.log(data);
             setClassement(data);
         } catch (error) {   
             console.error("Erreur:", error);

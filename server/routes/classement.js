@@ -24,9 +24,9 @@ router.post("/classementVoie", (req, res) => {
         JOIN voie ON point_voie.cotation = voie.cotation
         JOIN perf_voie ON voie.voieId = perf_voie.voieId
         JOIN climber ON perf_voie.climberId = climber.climberId
-        WHERE climber.sexe = "?"
+        WHERE climber.sexe = ?
         GROUP BY perf_voie.climberId
-        ORDER BY score DESC;
+        ORDER BY score DESC
         `,
         [sexe],
         (err, results) => {
